@@ -1,8 +1,8 @@
 # Deep Recursive HDRI and Deep Cycle HDRI in Pytorch
 
 We provide PyTorch implementations for GAN-based mutliple exposure stack generation.
-- Deep recursive HDRI
-- Deep cycle HDRI
+- [ ] Deep recursive HDRI
+- [x] Deep cycle HDRI: Learning to Generate Multi-Exposure Stacks with Cycle Consistency for High Dynamic Range Imaging
 
 ## General
 If you use the code for your research work, please cite our papers.
