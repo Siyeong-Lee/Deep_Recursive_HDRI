@@ -1,4 +1,5 @@
 # Deep Recursive HDRI in Pytorch
+[paper](https://openaccess.thecvf.com/content_ECCV_2018/papers/Siyeong_Lee_Deep_Recursive_HDRI_ECCV_2018_paper.pdf)
 
 We provide PyTorch implementations for GAN-based mutliple exposure stack generation.
 - [x] Deep recursive HDRI
