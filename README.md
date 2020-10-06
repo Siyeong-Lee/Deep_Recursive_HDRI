@@ -16,8 +16,8 @@ If you use the code for your research work, please cite our papers.
 }
 ```
 
-### model weight
-| Deep Recursive HDRI | model weight |
+### Model weight
+| Model Name | model weight |
 |:-------------------:|:------------:|
 |Deep Recursive HDRI  | [stopdown](https://drive.google.com/file/d/1EBNzkpPAlb01baNhw878BTGkmQpjFKdJ/view?usp=sharing) <br> [stopup](https://drive.google.com/file/d/1qiCfOxOn7rfEbNrOvkp1RkpFk91hmvF3/view?usp=sharing) |
 
