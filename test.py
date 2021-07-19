@@ -60,8 +60,6 @@ def check_args(args):
 
 """main"""
 def main():
-    os.environ["CUDA_VISIBLE_DEVICES"] = "2"
-
     # parse arguments
     args = parse_args()
     if args is None:
@@ -74,10 +72,6 @@ def main():
     net = Solver(args)
 
     # test
-    #net.test(input_path='./input/color/')
-    # net.test(input_path='./input/dsdl_input256/')
-    # net.test(input_path='./input/hdreye_0EV_256_2/')
-    #net.test4(input_path='./input/4/')
     net.test(input_path='/database2/Junghee/Stack_HDR_Eye')
 
 if __name__ == '__main__':
