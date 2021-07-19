@@ -72,7 +72,7 @@ def main():
     net = Solver(args)
 
     # test
-    net.test(input_path='/database2/Junghee/Stack_HDR_Eye')
+    net.test(input_path=args.test_dataset)
 
 if __name__ == '__main__':
     main()
