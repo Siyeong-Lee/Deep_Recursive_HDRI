@@ -17,6 +17,39 @@ If you use the code for your research work, please cite our papers.
 }
 ```
 
+### Model inference
+* Conda environment
+```
+conda create -n hdr python=3.6
+conda activate hdr
+conda install -c anaconda mkl
+conda install pytorch==1.0.0 torchvision==0.2.1 cuda100 -c pytorch
+```
+
+* install requirements.txt
+  * to install torch == 0.3.1 , 
+```
+pip install -r requirements.txt
+```
+
+* Please download two model weights below and organize the downloaded files as follows:
+```
+DeepRecursive_HDRI
+├──Result
+    └──model
+       ├── HDRGAN_stopdown_G_param_ch3_batch1_epoch20_lr0.0002.pkl
+       └── HDRGAN_stopup_G_param_ch3_batch1_epoch20_lr0.0002.pkl
+```
+
+* Prepare your test images
+```
+DeepRecursive_HDRI
+├──input
+   ├── test files (*.png etc..)
+```
+
+* 
+
 ### Model weight
 | Model Name | model weight |
 |:-------------------:|:------------:|
