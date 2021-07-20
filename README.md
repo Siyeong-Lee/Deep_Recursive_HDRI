@@ -49,6 +49,11 @@ DeepRecursive_HDRI
    ├── t11.png
 ```
 
+* Run the pretrained model 
+```
+python test.py --test_dataset './input'
+```
+
 * output
 ```
 DeepRecursive_HDRI
