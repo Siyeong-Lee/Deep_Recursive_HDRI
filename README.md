@@ -57,6 +57,9 @@ DeepRecursive_HDRI
    ├── t11 (multi exposure stack)
 ``` 
 
+**Note: We used the HDR Toolbox implementations of HDR merging methods ([Debevec and Malik 1997]) to generate the results in our paper.**
+  * see https://github.com/banterle/HDR_Toolbox
+
 ### Model weight
 | Model Name | model weight |
 |:-------------------:|:------------:|
