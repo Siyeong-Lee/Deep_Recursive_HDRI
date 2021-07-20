@@ -27,7 +27,6 @@ conda install pytorch==1.0.0 torchvision==0.2.1 cuda100 -c pytorch
 ```
 
 * install requirements.txt
-  * to install torch == 0.3.1 , 
 ```
 pip install -r requirements.txt
 ```
