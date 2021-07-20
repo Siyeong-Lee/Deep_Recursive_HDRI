@@ -45,10 +45,17 @@ DeepRecursive_HDRI
 ```
 DeepRecursive_HDRI
 ├──input
-   ├── test files (*.png etc..)
+   ├── t10.png 
+   ├── t11.png
 ```
 
-* 
+* output
+```
+DeepRecursive_HDRI
+├──Result
+   ├── t10 (multi exposure stack)
+   ├── t11 (multi exposure stack)
+``` 
 
 ### Model weight
 | Model Name | model weight |
