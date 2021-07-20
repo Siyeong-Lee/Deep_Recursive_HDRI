@@ -387,48 +387,43 @@ class Solver(object):
         self.save_model(epoch=None)
 
     # siyeong3
-    def test(self, input_path='./', out_path='./result/', extend = 3):
+    def test(self, input_path='./', out_path='./Result/', extend = 3):
         # load model
         self.load_model(is_pretrain=False)
         scenes = listdir(input_path)
-    
         for i, scene in enumerate(scenes):
             scene_path = join(input_path, scene)
             if not os.path.isdir(out_path):
                 os.mkdir(out_path)
-         
-            filelist = [join(scene_path, x) for x in sorted(listdir(scene_path)) if 'EV0' in x]
+            
+            out_name = os.path.splitext(os.path.split(scene_path)[1])[0]
+            storage_path = out_path + out_name + '/'
 
-            for filepath in filelist:
-                out_name = os.path.splitext(os.path.split(filepath)[1])[0]
-                out_name = '%04d'%(i)
-                storage_path = out_path + out_name + '/'
+            # mkdir storage folder
+            if not os.path.isdir(storage_path):
+                os.mkdir(storage_path)
 
-                # mkdir storage folder
-                if not os.path.isdir(storage_path):
-                    os.mkdir(storage_path)
+            # cp middle exposure file
+            cmd = "cp " + scene_path + " " + storage_path + out_name + '_EV0.png'            
+            os.system(cmd)
 
-                # cp middle exposure file
-                cmd = "cp " + filepath + " " + storage_path + out_name + '_EV0.png'            
-                os.system(cmd)
+            target = scene_path
+            for i in range(1, extend+1):
+                reconst = self.image_single(target, True)
+                output_name = storage_path + out_name + '_EV%d' %i + '.png'
+                reconst.save(output_name)
 
-                target = filepath
-                for i in range(1, extend+1):
-                    reconst = self.image_single(target, True)
-                    output_name = storage_path + out_name + '_EV%d' %i + '.png'
-                    reconst.save(output_name)
+                target = output_name
 
-                    target = output_name
+            target = scene_path
+            for i in range(1, extend+1):
+                reconst = self.image_single(target, False)
+                output_name = storage_path + out_name +'_EV-%d' %i + '.png'
+                reconst.save(output_name)
 
-                target = filepath
-                for i in range(1, extend+1):
-                    reconst = self.image_single(target, False)
-                    output_name = storage_path + out_name +'_EV-%d' %i + '.png'
-                    reconst.save(output_name)
-
-                    target = output_name
-                print('\tImage [', out_name, '] is finished.')
-            print('Test is finishied.')
+                target = output_name
+            print('\tImage [', out_name, '] is finished.')
+        print('Test is finishied.')
 
     def image_single(self, img_fn, stopup):
         # load data
